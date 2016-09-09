@@ -16,7 +16,7 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
     @objc public var signupPrompt:String = "Sign up"
     @objc public var dismissPrompt:String = "No, Thanks"
     @objc public var signupMessage:String = "Sign up to receive news and updates on \(productName)!\n\nWe will email you with instructions to get started, and will update you on news and special deals."
-    @objc public var signupThankYou:String = "Thanks for signing up!\nWe hope you ❤ Manuscripts."
+    @objc public var signupThankYou:String = "Thanks for signing up!"
     
     private var mailingListService:MailingListService?
     

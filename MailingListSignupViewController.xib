@@ -94,11 +94,9 @@ and will update you on news and special deals.</string>
                     </connections>
                 </textField>
                 <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MlR-aQ-NFM">
-                    <rect key="frame" x="18" y="65" width="315" height="34"/>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="5cW-zo-dQe">
+                    <rect key="frame" x="18" y="82" width="315" height="17"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Thanks for signing up!" id="5cW-zo-dQe">
                         <font key="font" metaFont="system"/>
-                        <string key="title">"Thanks for signing up! 
-We hope you ❤ Manuscripts.</string>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
