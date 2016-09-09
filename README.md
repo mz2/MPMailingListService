@@ -4,9 +4,9 @@
 - `MailingListSignupViewController`: a macOS view controller that can be placed in a window controller to act as a ready-made solution UI f.
 - `Mailing List Example.app`: an example app that demonstrates using `MailingListSignupViewController`.
 
-![Example A](example-1.png)
-
-![Example B](example-2.png)
+<img title="Example A" src="./example-1.png" width="350" />
+<br/>
+<img title="Example B" src="./example-2.png" width="350" />
 
 #### INSTALLATION
 
