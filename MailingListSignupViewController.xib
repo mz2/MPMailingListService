@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MailingListSignupViewController" customModule="MPMailingListService" customModuleProvider="target">
+            <connections>
+                <outlet property="dismissButton" destination="aGp-kM-jiL" id="4Vz-ZA-y9v"/>
+                <outlet property="emailAddressField" destination="eut-j1-t4p" id="pwL-nI-s58"/>
+                <outlet property="signUpButton" destination="PnX-0L-D3A" id="fkX-k9-Cs4"/>
+                <outlet property="thankYouField" destination="MlR-aQ-NFM" id="L6F-Vc-oWC"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="331"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PnX-0L-D3A">
+                    <rect key="frame" x="214" y="13" width="123" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="111" id="djH-bT-CBW"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="Sign up" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HH2-ld-Glb">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                    </buttonCell>
+                    <connections>
+                        <action selector="signUp:" target="-2" id="mvQ-gn-VlQ"/>
+                        <binding destination="-2" name="argument" keyPath="self.signupPrompt" id="wog-cb-KdX"/>
+                        <binding destination="-2" name="enabled" keyPath="self.emailAddressIsValid" id="hjc-MP-8gx"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aGp-kM-jiL">
+                    <rect key="frame" x="14" y="13" width="109" height="32"/>
+                    <buttonCell key="cell" type="push" title="No, Thanks" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rM1-Cm-qkb">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="dismiss:" target="-2" id="A57-Cp-s2W"/>
+                    </connections>
+                </button>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVQ-gN-uCe">
+                    <rect key="frame" x="130" y="219" width="92" height="92"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="92" id="jat-Bv-ayb"/>
+                        <constraint firstAttribute="height" constant="92" id="tIE-B4-101"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="1k8-de-9Uh"/>
+                </imageView>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eut-j1-t4p">
+                    <rect key="frame" x="20" y="71" width="311" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="email address" drawsBackground="YES" id="WdX-ue-WAy">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="hDN-Ip-Fgc"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="QEc-D0-rkz">
+                    <rect key="frame" x="18" y="109" width="315" height="68"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="2xR-aM-eU7">
+                        <font key="font" metaFont="system"/>
+                        <string key="title">Sign up to receive news &amp; updates on &lt;Product&gt;!
+
+We will email you with instructions to get started, 
+and will update you on news and special deals.</string>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.signupMessage" id="Spf-cx-tPG"/>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tNv-pQ-s73">
+                    <rect key="frame" x="90" y="187" width="171" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Sign up to our newsletter" id="WyG-4b-qgG">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.signupTitle" id="E4H-9O-KZb"/>
+                    </connections>
+                </textField>
+                <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MlR-aQ-NFM">
+                    <rect key="frame" x="18" y="65" width="315" height="34"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="5cW-zo-dQe">
+                        <font key="font" metaFont="system"/>
+                        <string key="title">"Thanks for signing up! 
+We hope you ❤ Manuscripts.</string>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="MlR-aQ-NFM" firstAttribute="top" secondItem="QEc-D0-rkz" secondAttribute="bottom" constant="10" id="1oS-GS-BjE"/>
+                <constraint firstAttribute="trailing" secondItem="PnX-0L-D3A" secondAttribute="trailing" constant="20" id="569-dY-sqF"/>
+                <constraint firstItem="aGp-kM-jiL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="7zr-Zn-QXk"/>
+                <constraint firstAttribute="trailing" secondItem="MlR-aQ-NFM" secondAttribute="trailing" constant="20" id="DI2-IV-eAA"/>
+                <constraint firstAttribute="trailing" secondItem="eut-j1-t4p" secondAttribute="trailing" constant="20" id="FyR-aW-Q1W"/>
+                <constraint firstAttribute="bottom" secondItem="aGp-kM-jiL" secondAttribute="bottom" constant="20" id="I6Y-nN-SeB"/>
+                <constraint firstItem="tNv-pQ-s73" firstAttribute="top" secondItem="IVQ-gN-uCe" secondAttribute="bottom" constant="15" id="TCh-rL-4TN"/>
+                <constraint firstItem="eut-j1-t4p" firstAttribute="top" secondItem="QEc-D0-rkz" secondAttribute="bottom" constant="16" id="V3S-NZ-8Kd"/>
+                <constraint firstItem="QEc-D0-rkz" firstAttribute="top" secondItem="tNv-pQ-s73" secondAttribute="bottom" constant="10" id="Vi8-NM-6XZ"/>
+                <constraint firstAttribute="trailing" secondItem="QEc-D0-rkz" secondAttribute="trailing" constant="20" id="WbY-mj-4kj"/>
+                <constraint firstItem="tNv-pQ-s73" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="ZCd-cZ-aYT"/>
+                <constraint firstItem="eut-j1-t4p" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="ZLu-77-Va6"/>
+                <constraint firstItem="QEc-D0-rkz" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="mYc-6X-E06"/>
+                <constraint firstItem="MlR-aQ-NFM" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="oOt-MK-mns"/>
+                <constraint firstAttribute="bottom" secondItem="PnX-0L-D3A" secondAttribute="bottom" constant="20" id="oWu-Me-eL5"/>
+                <constraint firstItem="IVQ-gN-uCe" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="qMZ-ll-039"/>
+                <constraint firstItem="IVQ-gN-uCe" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="vWh-ud-nKN"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="114.5"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="Q0i-f1-VQ7"/>
+    </objects>
+    <resources>
+        <image name="NSApplicationIcon" width="128" height="128"/>
+    </resources>
+</document>

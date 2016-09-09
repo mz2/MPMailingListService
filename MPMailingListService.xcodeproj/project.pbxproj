@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F29EFD91D83073200F8373C /* MailingListSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29EFD71D83073200F8373C /* MailingListSignupViewController.swift */; };
+		5F29EFDA1D83073200F8373C /* MailingListSignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F29EFD81D83073200F8373C /* MailingListSignupViewController.xib */; };
+		5F29EFE21D830B7B00F8373C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29EFE11D830B7B00F8373C /* AppDelegate.swift */; };
+		5F29EFE41D830B7B00F8373C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29EFE31D830B7B00F8373C /* ViewController.swift */; };
+		5F29EFE61D830B7B00F8373C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F29EFE51D830B7B00F8373C /* Assets.xcassets */; };
+		5F29EFE91D830B7B00F8373C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F29EFE71D830B7B00F8373C /* Main.storyboard */; };
+		5F29EFF01D830C0500F8373C /* MPMailingListService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCD54101D82CD9D00E9A32C /* MPMailingListService.framework */; };
+		5F29EFF21D830C1300F8373C /* ChimpKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F29EFF31D830C1300F8373C /* MPMailingListService.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FCD54101D82CD9D00E9A32C /* MPMailingListService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F29EFF41D830C1D00F8373C /* ChimpKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */; };
+		5F29EFFA1D83116C00F8373C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29EFF91D83116C00F8373C /* String+Extensions.swift */; };
+		5FCD54151D82CD9D00E9A32C /* MPMailingListService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FCD54131D82CD9D00E9A32C /* MPMailingListService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FCD541D1D82CE8800E9A32C /* ChimpKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */; };
+		5FCD541F1D82CEDB00E9A32C /* MailingListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCD541E1D82CEDB00E9A32C /* MailingListService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F29EFEE1D830C0200F8373C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FCD54071D82CD9D00E9A32C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FCD540F1D82CD9D00E9A32C;
+			remoteInfo = MPMailingListService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5F29EFF11D830C0A00F8373C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5F29EFF21D830C1300F8373C /* ChimpKit.framework in CopyFiles */,
+				5F29EFF31D830C1300F8373C /* MPMailingListService.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5F29EFD71D83073200F8373C /* MailingListSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingListSignupViewController.swift; sourceTree = "<group>"; };
+		5F29EFD81D83073200F8373C /* MailingListSignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailingListSignupViewController.xib; sourceTree = "<group>"; };
+		5F29EFDF1D830B7B00F8373C /* Mailing List Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mailing List Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F29EFE11D830B7B00F8373C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5F29EFE31D830B7B00F8373C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F29EFE51D830B7B00F8373C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F29EFE81D830B7B00F8373C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F29EFEA1D830B7B00F8373C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F29EFF91D83116C00F8373C /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		5FCD54101D82CD9D00E9A32C /* MPMailingListService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPMailingListService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FCD54131D82CD9D00E9A32C /* MPMailingListService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMailingListService.h; sourceTree = "<group>"; };
+		5FCD54141D82CD9D00E9A32C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ChimpKit.framework; path = Carthage/Build/Mac/ChimpKit.framework; sourceTree = "<group>"; };
+		5FCD541E1D82CEDB00E9A32C /* MailingListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingListService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F29EFDC1D830B7B00F8373C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F29EFF01D830C0500F8373C /* MPMailingListService.framework in Frameworks */,
+				5F29EFF41D830C1D00F8373C /* ChimpKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FCD540C1D82CD9D00E9A32C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FCD541D1D82CE8800E9A32C /* ChimpKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F29EFE01D830B7B00F8373C /* Mailing List Example */ = {
+			isa = PBXGroup;
+			children = (
+				5F29EFE11D830B7B00F8373C /* AppDelegate.swift */,
+				5F29EFE31D830B7B00F8373C /* ViewController.swift */,
+				5F29EFE51D830B7B00F8373C /* Assets.xcassets */,
+				5F29EFE71D830B7B00F8373C /* Main.storyboard */,
+				5F29EFEA1D830B7B00F8373C /* Info.plist */,
+			);
+			path = "Mailing List Example";
+			sourceTree = "<group>";
+		};
+		5FCD54061D82CD9D00E9A32C = {
+			isa = PBXGroup;
+			children = (
+				5F29EFF91D83116C00F8373C /* String+Extensions.swift */,
+				5F29EFD71D83073200F8373C /* MailingListSignupViewController.swift */,
+				5F29EFD81D83073200F8373C /* MailingListSignupViewController.xib */,
+				5FCD541E1D82CEDB00E9A32C /* MailingListService.swift */,
+				5F29EFE01D830B7B00F8373C /* Mailing List Example */,
+				5FCD541B1D82CE8100E9A32C /* Frameworks */,
+				5FCD54121D82CD9D00E9A32C /* MPMailingListService */,
+				5FCD54111D82CD9D00E9A32C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5FCD54111D82CD9D00E9A32C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FCD54101D82CD9D00E9A32C /* MPMailingListService.framework */,
+				5F29EFDF1D830B7B00F8373C /* Mailing List Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FCD54121D82CD9D00E9A32C /* MPMailingListService */ = {
+			isa = PBXGroup;
+			children = (
+				5FCD54131D82CD9D00E9A32C /* MPMailingListService.h */,
+				5FCD54141D82CD9D00E9A32C /* Info.plist */,
+			);
+			path = MPMailingListService;
+			sourceTree = "<group>";
+		};
+		5FCD541B1D82CE8100E9A32C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5FCD540D1D82CD9D00E9A32C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FCD54151D82CD9D00E9A32C /* MPMailingListService.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5F29EFDE1D830B7B00F8373C /* Mailing List Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F29EFEB1D830B7B00F8373C /* Build configuration list for PBXNativeTarget "Mailing List Example" */;
+			buildPhases = (
+				5F29EFDB1D830B7B00F8373C /* Sources */,
+				5F29EFDC1D830B7B00F8373C /* Frameworks */,
+				5F29EFDD1D830B7B00F8373C /* Resources */,
+				5F29EFF11D830C0A00F8373C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F29EFEF1D830C0200F8373C /* PBXTargetDependency */,
+			);
+			name = "Mailing List Example";
+			productName = "Mailing List Example";
+			productReference = 5F29EFDF1D830B7B00F8373C /* Mailing List Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5FCD540F1D82CD9D00E9A32C /* MPMailingListService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FCD54181D82CD9D00E9A32C /* Build configuration list for PBXNativeTarget "MPMailingListService" */;
+			buildPhases = (
+				5FCD540B1D82CD9D00E9A32C /* Sources */,
+				5FCD540C1D82CD9D00E9A32C /* Frameworks */,
+				5FCD540D1D82CD9D00E9A32C /* Headers */,
+				5FCD540E1D82CD9D00E9A32C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MPMailingListService;
+			productName = MPMailingListService;
+			productReference = 5FCD54101D82CD9D00E9A32C /* MPMailingListService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5FCD54071D82CD9D00E9A32C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Matias Piipari & Co";
+				TargetAttributes = {
+					5F29EFDE1D830B7B00F8373C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = SJK358RN87;
+						ProvisioningStyle = Automatic;
+					};
+					5FCD540F1D82CD9D00E9A32C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = SJK358RN87;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5FCD540A1D82CD9D00E9A32C /* Build configuration list for PBXProject "MPMailingListService" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5FCD54061D82CD9D00E9A32C;
+			productRefGroup = 5FCD54111D82CD9D00E9A32C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5FCD540F1D82CD9D00E9A32C /* MPMailingListService */,
+				5F29EFDE1D830B7B00F8373C /* Mailing List Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F29EFDD1D830B7B00F8373C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F29EFE61D830B7B00F8373C /* Assets.xcassets in Resources */,
+				5F29EFE91D830B7B00F8373C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FCD540E1D82CD9D00E9A32C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F29EFDA1D83073200F8373C /* MailingListSignupViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F29EFDB1D830B7B00F8373C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F29EFE41D830B7B00F8373C /* ViewController.swift in Sources */,
+				5F29EFE21D830B7B00F8373C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FCD540B1D82CD9D00E9A32C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F29EFD91D83073200F8373C /* MailingListSignupViewController.swift in Sources */,
+				5F29EFFA1D83116C00F8373C /* String+Extensions.swift in Sources */,
+				5FCD541F1D82CEDB00E9A32C /* MailingListService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F29EFEF1D830C0200F8373C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FCD540F1D82CD9D00E9A32C /* MPMailingListService */;
+			targetProxy = 5F29EFEE1D830C0200F8373C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5F29EFE71D830B7B00F8373C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F29EFE81D830B7B00F8373C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F29EFEC1D830B7B00F8373C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SJK358RN87;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "Mailing List Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.manuscripts.Mailing-List-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		5F29EFED1D830B7B00F8373C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SJK358RN87;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "Mailing List Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.manuscripts.Mailing-List-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+		5FCD54161D82CD9D00E9A32C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5FCD54171D82CD9D00E9A32C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5FCD54191D82CD9D00E9A32C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SJK358RN87;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = MPMailingListService/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuscripts.MPMailingListService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		5FCD541A1D82CD9D00E9A32C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = SJK358RN87;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = MPMailingListService/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuscripts.MPMailingListService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F29EFEB1D830B7B00F8373C /* Build configuration list for PBXNativeTarget "Mailing List Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F29EFEC1D830B7B00F8373C /* Debug */,
+				5F29EFED1D830B7B00F8373C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5FCD540A1D82CD9D00E9A32C /* Build configuration list for PBXProject "MPMailingListService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FCD54161D82CD9D00E9A32C /* Debug */,
+				5FCD54171D82CD9D00E9A32C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FCD54181D82CD9D00E9A32C /* Build configuration list for PBXNativeTarget "MPMailingListService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FCD54191D82CD9D00E9A32C /* Debug */,
+				5FCD541A1D82CD9D00E9A32C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5FCD54071D82CD9D00E9A32C /* Project object */;
+}
