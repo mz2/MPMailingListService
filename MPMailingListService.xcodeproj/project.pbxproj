@@ -18,6 +18,7 @@
 		5F29EFF31D830C1300F8373C /* MPMailingListService.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FCD54101D82CD9D00E9A32C /* MPMailingListService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F29EFF41D830C1D00F8373C /* ChimpKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */; };
 		5F29EFFA1D83116C00F8373C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29EFF91D83116C00F8373C /* String+Extensions.swift */; };
+		5F29EFFC1D843D2300F8373C /* MailingListSignupWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29EFFB1D843D2300F8373C /* MailingListSignupWindowController.swift */; };
 		5FCD54151D82CD9D00E9A32C /* MPMailingListService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FCD54131D82CD9D00E9A32C /* MPMailingListService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FCD541D1D82CE8800E9A32C /* ChimpKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */; };
 		5FCD541F1D82CEDB00E9A32C /* MailingListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCD541E1D82CEDB00E9A32C /* MailingListService.swift */; };
@@ -57,6 +58,8 @@
 		5F29EFE81D830B7B00F8373C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F29EFEA1D830B7B00F8373C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F29EFF91D83116C00F8373C /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		5F29EFFB1D843D2300F8373C /* MailingListSignupWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingListSignupWindowController.swift; sourceTree = "<group>"; };
+		5F29EFFD1D8445C000F8373C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5FCD54101D82CD9D00E9A32C /* MPMailingListService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPMailingListService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCD54131D82CD9D00E9A32C /* MPMailingListService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMailingListService.h; sourceTree = "<group>"; };
 		5FCD54141D82CD9D00E9A32C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,7 +103,9 @@
 		5FCD54061D82CD9D00E9A32C = {
 			isa = PBXGroup;
 			children = (
+				5F29EFFD1D8445C000F8373C /* README.md */,
 				5F29EFF91D83116C00F8373C /* String+Extensions.swift */,
+				5F29EFFB1D843D2300F8373C /* MailingListSignupWindowController.swift */,
 				5F29EFD71D83073200F8373C /* MailingListSignupViewController.swift */,
 				5F29EFD81D83073200F8373C /* MailingListSignupViewController.xib */,
 				5FCD541E1D82CEDB00E9A32C /* MailingListService.swift */,
@@ -265,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F29EFD91D83073200F8373C /* MailingListSignupViewController.swift in Sources */,
+				5F29EFFC1D843D2300F8373C /* MailingListSignupWindowController.swift in Sources */,
 				5F29EFFA1D83116C00F8373C /* String+Extensions.swift in Sources */,
 				5FCD541F1D82CEDB00E9A32C /* MailingListService.swift in Sources */,
 			);

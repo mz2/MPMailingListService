@@ -8,15 +8,23 @@
 
 import Cocoa
 
+@objc public protocol MailingListSignupViewControllerDelegate {
+    func shouldDismissSignupViewController(signupViewController:MailingListSignupViewController)
+}
+
+@IBDesignable
 public class MailingListSignupViewController: NSViewController, MailingListServiceDataSource {
 
-    @objc public var appIcon:NSImage = NSApplication.sharedApplication().applicationIconImage
-    @objc public var signupWindowTitle:String = "Newsletter"
-    @objc public var signupTitle:String = "Sign up to our newsletter"
-    @objc public var signupPrompt:String = "Sign up"
-    @objc public var dismissPrompt:String = "No, Thanks"
-    @objc public var signupMessage:String = "Sign up to receive news and updates on \(productName)!\n\nWe will email you with instructions to get started, and will update you on news and special deals."
-    @objc public var signupThankYou:String = "Thanks for signing up!"
+    @IBInspectable @objc public var appIcon:NSImage = NSApplication.sharedApplication().applicationIconImage
+    
+    // these strings just such as to avoid Nib loading time crashes with bad error messages
+    // there are more meaningful defaults in the signup window controller class, also with IBInspectable properties.
+    
+    @IBInspectable @objc public var signupTitle:String = "<Title>"
+    @IBInspectable @objc public var signupPrompt:String = "<Prompt>"
+    @IBInspectable @objc public var dismissPrompt:String = "Dismiss"
+    @IBInspectable @objc public var signupMessage:String = "Sign up"
+    @IBInspectable @objc public var signupThankYou:String = "<Thank you message>"
     
     private var mailingListService:MailingListService?
     
@@ -27,10 +35,10 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
     @IBOutlet weak var emailAddressField: NSTextField!
     @IBOutlet weak var thankYouField: NSTextField!
     
-    @objc public class var productName: String {
-        return NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String
-                ?? "<Your app whose bundle lacks Info.plist key 'CFBundleName'>"
-    }
+    @IBOutlet weak var delegate:MailingListSignupViewControllerDelegate?
+    
+    public var APIKey:String?
+    public var listID:String?
     
     @objc(signUp:) @IBAction func signUp(sender:AnyObject?) {
         self.mailingListService?.signUp(emailAddress: self.emailAddressField.stringValue,
@@ -61,7 +69,7 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
     }
     
     @objc(dismiss:) @IBAction func dismiss(sender:AnyObject?) {
-        self.view.window?.close()
+        self.delegate?.shouldDismissSignupViewController(self)
     }
     
     public override func viewDidLoad() {
@@ -71,23 +79,27 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
         self.emailAddressField.becomeFirstResponder()
     }
     
-    public override func viewWillAppear() {
-        self.view.window?.title = self.signupWindowTitle
-    }
-    
     @objc public var emailAddressIsValid:Bool {
         return self.emailAddressField.stringValue.isValidEmailAddress
     }
     
     // MARK: MailingListServiceDataSource
     
-    @objc public func APIKey(mailingListService service: MailingListService) -> String {
-        preconditionFailure("Return your Mailchimp API key here.")
+    public func APIKey(mailingListService service: MailingListService) -> String {
+        guard let apiKey = self.APIKey else {
+            preconditionFailure("self.APIKey is required")
+        }
+        
+        return apiKey
     }
     
-    @objc public func listIdentifier(mailingListService service: MailingListService,
+    public func listIdentifier(mailingListService service: MailingListService,
                                                   listType: MailingListType) -> String {
-        preconditionFailure("Return your Mailchimp list identifier here.")
+        guard let listIdentifier = self.listID else {
+            preconditionFailure("self.listID is required")
+        }
+        
+        return listIdentifier
     }
 
 }

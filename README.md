@@ -1,7 +1,8 @@
 ## MPMailingListService [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 - `MailingListService`: Mailchimp based mailing list signup service, backed by ChimpKit3.
-- `MailingListSignupViewController`: a macOS view controller that can be placed in a window controller to act as a ready-made solution UI f.
+- `MailingListSignupViewController`: a macOS view controller that can be placed in a window controller for mailing list signup. Safe to be subclassed, but you might not need to.
+- `MailingListSignupWindowController`: a macOS window controller that can be used as a ready-made UI for mailing list signup. All UI visible properties are IBInspectable and can be therefore set in Interface Builder, with commonly no need to subclass. Safe to be subclassed, but you might not need to.
 - `Mailing List Example.app`: an example app that demonstrates using `MailingListSignupViewController`.
 
 <img title="Example A" src="./example-1.png" width="350" />

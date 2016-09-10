@@ -9,18 +9,18 @@
 import Foundation
 import ChimpKit
 
-@objc public enum MailingListType:UInt {
+public enum MailingListType:UInt {
     case Newsletter = 1 // TODO: model this as a freeform value if requested.
 }
 
-@objc public protocol MailingListServiceDataSource {
+public protocol MailingListServiceDataSource {
     func APIKey(mailingListService service: MailingListService) -> String
     func listIdentifier(mailingListService service: MailingListService, listType:MailingListType) -> String
 }
 
 public typealias MailingListServiceSignupCompletionBlock = (error:ErrorType?) -> Void
 
-@objc public class MailingListService: NSObject {
+public struct MailingListService {
     
     public static let ErrorDomain = "MailingListServiceErrorDomain"
     
@@ -81,18 +81,9 @@ public typealias MailingListServiceSignupCompletionBlock = (error:ErrorType?) ->
         }
     }
     
-    private(set) public weak var dataSource:MailingListServiceDataSource?
-    private let chimpKit:ChimpKit
-    
-    public init(dataSource:MailingListServiceDataSource) {
-        self.dataSource = dataSource
-        self.chimpKit = ChimpKit()
+    private(set) public var dataSource:MailingListServiceDataSource?
+    private let chimpKit = ChimpKit()
         
-        super.init()
-        
-        self.chimpKit.apiKey = self.dataSource?.APIKey(mailingListService: self)
-    }
-    
     public func signUp(emailAddress address:String,
                                     listType:MailingListType,
                                     completionHandler: MailingListServiceSignupCompletionBlock) {
@@ -104,6 +95,7 @@ public typealias MailingListServiceSignupCompletionBlock = (error:ErrorType?) ->
         
         let params:[NSObject:AnyObject] = ["id": listID, "email": ["email":address]]
         
+        self.chimpKit.apiKey = self.dataSource?.APIKey(mailingListService: self)
         self.chimpKit.callApiMethod("lists/subscribe", withParams: params) { response, data, error in
             if let error = error {
                 dispatch_async(dispatch_get_main_queue()) {
