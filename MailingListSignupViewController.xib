@@ -71,7 +71,7 @@ DQ
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tNv-pQ-s73">
-                    <rect key="frame" x="97" y="314" width="157" height="19"/>
+                    <rect key="frame" x="97" y="314" width="236" height="19"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Sign up to our newsletter" id="WyG-4b-qgG">
                         <font key="font" metaFont="systemBold" size="15"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -117,8 +117,8 @@ and will update you on news and special deals.</string>
                 <constraint firstItem="eut-j1-t4p" firstAttribute="top" secondItem="QEc-D0-rkz" secondAttribute="bottom" constant="26" id="V3S-NZ-8Kd"/>
                 <constraint firstAttribute="trailing" secondItem="QEc-D0-rkz" secondAttribute="trailing" constant="20" id="WbY-mj-4kj"/>
                 <constraint firstItem="IVQ-gN-uCe" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="ZB8-Vk-0mW"/>
-                <constraint firstItem="tNv-pQ-s73" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="ZCd-cZ-aYT"/>
                 <constraint firstItem="eut-j1-t4p" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="ZLu-77-Va6"/>
+                <constraint firstAttribute="trailing" secondItem="tNv-pQ-s73" secondAttribute="trailing" constant="20" id="Zf5-gQ-kun"/>
                 <constraint firstItem="QEc-D0-rkz" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="mYc-6X-E06"/>
                 <constraint firstItem="MlR-aQ-NFM" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="oOt-MK-mns"/>
                 <constraint firstAttribute="bottom" secondItem="PnX-0L-D3A" secondAttribute="bottom" constant="20" id="oWu-Me-eL5"/>
