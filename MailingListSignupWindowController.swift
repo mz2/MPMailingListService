@@ -8,7 +8,7 @@
 
 import Foundation
 
-@IBDesignable public class MailingListSignupWindowController: NSWindowController, NSWindowDelegate {
+@IBDesignable @objc public class MailingListSignupWindowController: NSWindowController, NSWindowDelegate {
     
     @IBInspectable public var APIKey:String?
         { didSet { self.listSignupViewController?.APIKey = APIKey } }
