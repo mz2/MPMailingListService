@@ -15,7 +15,11 @@ import Cocoa
 @IBDesignable
 public class MailingListSignupViewController: NSViewController, MailingListServiceDataSource {
 
-    @IBInspectable @objc public var appIcon:NSImage = NSApplication.sharedApplication().applicationIconImage
+    @IBInspectable @objc public var icon:NSImage? { didSet {
+        self.signupTitleImageView?.image = icon ?? NSApplication.sharedApplication().applicationIconImage
+        }
+    }
+    @IBOutlet public weak var signupTitleImageView:NSImageView?
     
     // these strings just such as to avoid Nib loading time crashes with bad error messages
     // there are more meaningful defaults in the signup window controller class, also with IBInspectable properties.
@@ -27,10 +31,9 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
     @IBOutlet weak var signupTitleField: NSTextField!
     
     @IBInspectable @objc public var signupPrompt:String? { didSet {
-        self.signupPromptButton.title = signupPrompt ?? ""
+        self.signUpButton.title = signupPrompt ?? ""
         }
     }
-    @IBOutlet weak var signupPromptButton: NSButton!
     
     @IBInspectable @objc public var dismissPrompt:String? { didSet {
         self.noThanksButton.title = dismissPrompt ?? ""
@@ -54,8 +57,8 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
     
     public var listType:MailingListType = .Newsletter
     
-    @IBOutlet weak var dismissButton: NSButton!
-    @IBOutlet weak var signUpButton: NSButton!
+    @IBOutlet public weak var dismissButton: NSButton!
+    @IBOutlet public weak var signUpButton: NSButton!
     @IBOutlet public weak var emailAddressField: NSTextField!
     
     @IBOutlet weak var delegate:MailingListSignupViewControllerDelegate?

@@ -12,8 +12,8 @@
                 <outlet property="noThanksButton" destination="aGp-kM-jiL" id="FmA-VH-nOj"/>
                 <outlet property="signUpButton" destination="PnX-0L-D3A" id="fkX-k9-Cs4"/>
                 <outlet property="signupMessageField" destination="QEc-D0-rkz" id="A4l-3U-CIP"/>
-                <outlet property="signupPromptButton" destination="PnX-0L-D3A" id="DN1-7V-jfG"/>
                 <outlet property="signupTitleField" destination="tNv-pQ-s73" id="xsY-9O-jHj"/>
+                <outlet property="signupTitleImageView" destination="IVQ-gN-uCe" id="2hL-GN-HcF"/>
                 <outlet property="thankYouField" destination="MlR-aQ-NFM" id="own-mO-ozd"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -52,7 +52,7 @@ DQ
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eut-j1-t4p">
-                    <rect key="frame" x="20" y="118" width="311" height="22"/>
+                    <rect key="frame" x="20" y="98" width="311" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="email address" drawsBackground="YES" id="WdX-ue-WAy">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -63,23 +63,23 @@ DQ
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tNv-pQ-s73">
-                    <rect key="frame" x="94" y="244" width="162" height="19"/>
+                    <rect key="frame" x="94" y="224" width="162" height="19"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Sign up to Newsletter" id="WyG-4b-qgG">
                         <font key="font" metaFont="systemBold" size="15"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MlR-aQ-NFM">
-                    <rect key="frame" x="18" y="129" width="315" height="17"/>
+                <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MlR-aQ-NFM">
+                    <rect key="frame" x="18" y="109" width="315" height="17"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Thanks for signing up!" id="5cW-zo-dQe">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="QEc-D0-rkz">
-                    <rect key="frame" x="18" y="166" width="315" height="68"/>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QEc-D0-rkz">
+                    <rect key="frame" x="18" y="146" width="315" height="68"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="2xR-aM-eU7">
                         <font key="font" metaFont="system"/>
                         <string key="title">Sign up to receive news &amp; updates on &lt;Product&gt;!
@@ -94,10 +94,10 @@ and will update you on news and special deals.</string>
                     </connections>
                 </textField>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVQ-gN-uCe">
-                    <rect key="frame" x="143" y="271" width="64" height="64"/>
+                    <rect key="frame" x="135" y="255" width="80" height="80"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="64" id="TLG-s8-VmG"/>
-                        <constraint firstAttribute="height" constant="64" id="x37-mh-bxu"/>
+                        <constraint firstAttribute="width" constant="80" id="TLG-s8-VmG"/>
+                        <constraint firstAttribute="height" constant="80" id="x37-mh-bxu"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="1k8-de-9Uh"/>
                 </imageView>
@@ -113,7 +113,7 @@ and will update you on news and special deals.</string>
                 <constraint firstItem="IVQ-gN-uCe" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="Glv-Mh-Ebl"/>
                 <constraint firstItem="QEc-D0-rkz" firstAttribute="top" secondItem="tNv-pQ-s73" secondAttribute="bottom" constant="10" id="Hkl-cK-TZq"/>
                 <constraint firstAttribute="bottom" secondItem="aGp-kM-jiL" secondAttribute="bottom" constant="20" id="I6Y-nN-SeB"/>
-                <constraint firstItem="tNv-pQ-s73" firstAttribute="top" secondItem="IVQ-gN-uCe" secondAttribute="bottom" constant="8" id="KFK-S7-IfA"/>
+                <constraint firstItem="tNv-pQ-s73" firstAttribute="top" secondItem="IVQ-gN-uCe" secondAttribute="bottom" constant="12" id="KFK-S7-IfA"/>
                 <constraint firstItem="tNv-pQ-s73" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="Mnp-Hn-ur1"/>
                 <constraint firstItem="IVQ-gN-uCe" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="UMJ-YG-8PD"/>
                 <constraint firstItem="eut-j1-t4p" firstAttribute="top" secondItem="QEc-D0-rkz" secondAttribute="bottom" constant="26" id="V3S-NZ-8Kd"/>

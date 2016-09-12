@@ -22,14 +22,11 @@ import Foundation
     @IBInspectable public var listID:String?
         { didSet { self.listSignupViewController?.listID = listID } }
     
-    @IBInspectable @objc public var appIcon:NSImage = NSApplication.sharedApplication().applicationIconImage
-        { didSet { self.listSignupViewController?.appIcon = appIcon } }
+    @IBInspectable @objc public var icon:NSImage?
+        { didSet { self.listSignupViewController?.icon = icon ?? NSApplication.sharedApplication().applicationIconImage } }
     
     @IBInspectable @objc public var signupTitle:String?
-        { didSet {
-            self.listSignupViewController?.signupTitle = signupTitle
-        }
-    }
+        { didSet { self.listSignupViewController?.signupTitle = signupTitle } }
     
     @IBInspectable @objc public var signupPrompt:String?
         { didSet { self.listSignupViewController?.signupPrompt = signupPrompt } }

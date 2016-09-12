@@ -11,7 +11,7 @@
         <window title="Newsletter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="1706" y="724" width="351" height="371"/>
+            <rect key="contentRect" x="1768" y="952" width="351" height="371"/>
             <rect key="screenRect" x="0.0" y="0.0" width="4096" height="2137"/>
             <value key="minSize" type="size" width="351" height="371"/>
             <value key="maxSize" type="size" width="351" height="371"/>
