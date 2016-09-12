@@ -39,8 +39,6 @@ DQ
                     <connections>
                         <action selector="signUp:" target="-2" id="mvQ-gn-VlQ"/>
                         <binding destination="-2" name="enabled" keyPath="self.emailAddressIsValid" id="hjc-MP-8gx"/>
-                        <binding destination="-2" name="argument" keyPath="self.signupPrompt" id="wog-cb-KdX"/>
-                        <binding destination="-2" name="title" keyPath="self.signupPrompt" id="pN6-eN-yT6"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aGp-kM-jiL">
@@ -103,9 +101,6 @@ and will update you on news and special deals.</string>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
-                    <connections>
-                        <binding destination="-2" name="value" keyPath="self.signupThankYou" id="uKX-RL-io6"/>
-                    </connections>
                 </textField>
             </subviews>
             <constraints>

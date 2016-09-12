@@ -20,31 +20,31 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
     // these strings just such as to avoid Nib loading time crashes with bad error messages
     // there are more meaningful defaults in the signup window controller class, also with IBInspectable properties.
     
-    @IBInspectable @objc public var signupTitle:String?
-    @IBOutlet weak var signupTitleField: NSTextField! { didSet {
-            self.signupTitleField.stringValue = signupTitle ?? ""
+    @IBInspectable @objc public var signupTitle:String? { didSet {
+        self.signupTitleField.stringValue = signupTitle ?? ""
         }
     }
+    @IBOutlet weak var signupTitleField: NSTextField!
     
-    @IBInspectable @objc public var signupPrompt:String?
-    @IBOutlet weak var signupPromptButton: NSButton! { didSet {
-            self.signupPromptButton.title = signupPrompt ?? ""
+    @IBInspectable @objc public var signupPrompt:String? { didSet {
+        self.signupPromptButton.title = signupPrompt ?? ""
         }
     }
+    @IBOutlet weak var signupPromptButton: NSButton!
     
-    @IBInspectable @objc public var dismissPrompt:String? = "Dismiss"
-    @IBOutlet weak var noThanksButton: NSButton! { didSet {
-            self.noThanksButton.title = dismissPrompt ?? ""
+    @IBInspectable @objc public var dismissPrompt:String? { didSet {
+        self.noThanksButton.title = dismissPrompt ?? ""
         }
     }
+    @IBOutlet weak var noThanksButton: NSButton!
     
-    @IBInspectable @objc public var signupMessage:String? = "Sign up"
-    @IBOutlet weak var signupMessageField: NSTextField! { didSet {
-            self.signupMessageField.stringValue = signupMessage ?? ""
+    @IBInspectable @objc public var signupMessage:String? { didSet {
+        self.signupMessageField.stringValue = signupMessage ?? ""
         }
     }
+    @IBOutlet weak var signupMessageField: NSTextField!
     
-    @IBInspectable @objc public var signupThankYou:String? = "<Thank you message>" { didSet {
+    @IBInspectable @objc public var signupThankYou:String? { didSet {
             self.thankYouField.stringValue = signupThankYou ?? ""
         }
     }
