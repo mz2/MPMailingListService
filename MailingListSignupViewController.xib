@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
@@ -34,8 +34,9 @@ DQ
                     </buttonCell>
                     <connections>
                         <action selector="signUp:" target="-2" id="mvQ-gn-VlQ"/>
-                        <binding destination="-2" name="argument" keyPath="self.signupPrompt" id="wog-cb-KdX"/>
                         <binding destination="-2" name="enabled" keyPath="self.emailAddressIsValid" id="hjc-MP-8gx"/>
+                        <binding destination="-2" name="argument" keyPath="self.signupPrompt" id="wog-cb-KdX"/>
+                        <binding destination="-2" name="title" keyPath="self.signupPrompt" id="pN6-eN-yT6"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aGp-kM-jiL">
@@ -46,6 +47,7 @@ DQ
                     </buttonCell>
                     <connections>
                         <action selector="dismiss:" target="-2" id="A57-Cp-s2W"/>
+                        <binding destination="-2" name="title" keyPath="self.dismissPrompt" id="0Y1-QA-52o"/>
                     </connections>
                 </button>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVQ-gN-uCe">
@@ -100,6 +102,9 @@ and will update you on news and special deals.</string>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.signupThankYou" id="uKX-RL-io6"/>
+                    </connections>
                 </textField>
             </subviews>
             <constraints>
