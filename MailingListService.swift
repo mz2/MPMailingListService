@@ -24,6 +24,10 @@ public struct MailingListService {
     
     public static let ErrorDomain = "MailingListServiceErrorDomain"
     
+    public init(dataSource:MailingListServiceDataSource) {
+        self.dataSource = dataSource
+    }
+    
     public enum Error:ErrorType {
         case UnexpectedResponse
         case AlreadySignedUp
@@ -31,13 +35,21 @@ public struct MailingListService {
         case ResponseDataNotJSON(NSData?)
         case ErrorCodeNotNumber([String:AnyObject])
         
-        public var code:Int {
+        public enum Code:Int {
+            case AlreadySignedUp = 1
+            case EmptyResponse = 2
+            case ErrorCodeNotNumber = 3
+            case ResponseDataNotJSON = 5
+            case UnexpectedResponse = 6
+        }
+        
+        public var code:Code {
             switch self {
-            case .AlreadySignedUp: return 1
-            case .EmptyResponse: return 2
-            case .ErrorCodeNotNumber(_): return 3
-            case .ResponseDataNotJSON(_): return 5
-            case .UnexpectedResponse: return 6
+            case .AlreadySignedUp: return .AlreadySignedUp
+            case .EmptyResponse: return .EmptyResponse
+            case .ErrorCodeNotNumber(_): return .ErrorCodeNotNumber
+            case .ResponseDataNotJSON(_): return .ResponseDataNotJSON
+            case .UnexpectedResponse: return .UnexpectedResponse
             }
         }
         
@@ -75,7 +87,7 @@ public struct MailingListService {
         
         public var presentableRepresentation:NSError {
             return NSError(domain: ErrorDomain,
-                           code: self.code,
+                           code: self.code.rawValue,
                            userInfo: [ NSLocalizedDescriptionKey: self.presentableDescription,
                             NSLocalizedRecoverySuggestionErrorKey: self.presentableRecoverySuggestion ])
         }

@@ -56,7 +56,7 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
     
     @IBOutlet weak var dismissButton: NSButton!
     @IBOutlet weak var signUpButton: NSButton!
-    @IBOutlet weak var emailAddressField: NSTextField!
+    @IBOutlet public weak var emailAddressField: NSTextField!
     
     @IBOutlet weak var delegate:MailingListSignupViewControllerDelegate?
     

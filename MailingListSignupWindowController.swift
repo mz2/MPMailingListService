@@ -8,7 +8,13 @@
 
 import Foundation
 
+@objc public protocol MailingListSignupWindowControllerDelegate {
+    @objc (didDismissMailingListSignupWindowController:) func didDismiss(mailingListSignupWindowController controller:MailingListSignupWindowController)
+}
+
 @IBDesignable @objc public class MailingListSignupWindowController: NSWindowController, NSWindowDelegate {
+    
+    @IBOutlet weak var delegate:MailingListSignupWindowControllerDelegate?
     
     @IBInspectable public var APIKey:String?
         { didSet { self.listSignupViewController?.APIKey = APIKey } }

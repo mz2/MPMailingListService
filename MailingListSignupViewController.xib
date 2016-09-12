@@ -21,7 +21,7 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="351" height="376"/>
+            <rect key="frame" x="0.0" y="0.0" width="351" height="355"/>
             <subviews>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PnX-0L-D3A">
                     <rect key="frame" x="214" y="13" width="123" height="32"/>
@@ -51,16 +51,8 @@ DQ
                         <binding destination="-2" name="title" keyPath="self.dismissPrompt" id="0Y1-QA-52o"/>
                     </connections>
                 </button>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVQ-gN-uCe">
-                    <rect key="frame" x="20" y="292" width="64" height="64"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="64" id="jat-Bv-ayb"/>
-                        <constraint firstAttribute="height" constant="64" id="tIE-B4-101"/>
-                    </constraints>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="1k8-de-9Uh"/>
-                </imageView>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eut-j1-t4p">
-                    <rect key="frame" x="20" y="153" width="311" height="22"/>
+                    <rect key="frame" x="20" y="118" width="311" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="email address" drawsBackground="YES" id="WdX-ue-WAy">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -71,15 +63,15 @@ DQ
                     </connections>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tNv-pQ-s73">
-                    <rect key="frame" x="97" y="314" width="236" height="19"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Sign up to our newsletter" id="WyG-4b-qgG">
+                    <rect key="frame" x="94" y="244" width="162" height="19"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Sign up to Newsletter" id="WyG-4b-qgG">
                         <font key="font" metaFont="systemBold" size="15"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MlR-aQ-NFM">
-                    <rect key="frame" x="18" y="164" width="315" height="17"/>
+                    <rect key="frame" x="18" y="129" width="315" height="17"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Thanks for signing up!" id="5cW-zo-dQe">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -87,7 +79,7 @@ DQ
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="QEc-D0-rkz">
-                    <rect key="frame" x="18" y="201" width="315" height="68"/>
+                    <rect key="frame" x="18" y="166" width="315" height="68"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="2xR-aM-eU7">
                         <font key="font" metaFont="system"/>
                         <string key="title">Sign up to receive news &amp; updates on &lt;Product&gt;!
@@ -101,32 +93,38 @@ and will update you on news and special deals.</string>
                         <binding destination="-2" name="value" keyPath="self.signupMessage" id="Spf-cx-tPG"/>
                     </connections>
                 </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVQ-gN-uCe">
+                    <rect key="frame" x="143" y="271" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="TLG-s8-VmG"/>
+                        <constraint firstAttribute="height" constant="64" id="x37-mh-bxu"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="1k8-de-9Uh"/>
+                </imageView>
             </subviews>
             <constraints>
-                <constraint firstItem="tNv-pQ-s73" firstAttribute="centerY" secondItem="IVQ-gN-uCe" secondAttribute="centerY" id="1RA-Mm-L6V"/>
                 <constraint firstItem="MlR-aQ-NFM" firstAttribute="top" secondItem="QEc-D0-rkz" secondAttribute="bottom" constant="20" id="1oS-GS-BjE"/>
                 <constraint firstAttribute="trailing" secondItem="PnX-0L-D3A" secondAttribute="trailing" constant="20" id="569-dY-sqF"/>
                 <constraint firstItem="aGp-kM-jiL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="7zr-Zn-QXk"/>
                 <constraint firstAttribute="width" constant="351" id="Byx-ky-Rfn"/>
                 <constraint firstAttribute="trailing" secondItem="MlR-aQ-NFM" secondAttribute="trailing" constant="20" id="DI2-IV-eAA"/>
-                <constraint firstAttribute="height" constant="376" id="FeT-gT-kny"/>
+                <constraint firstAttribute="height" constant="355" id="FeT-gT-kny"/>
                 <constraint firstAttribute="trailing" secondItem="eut-j1-t4p" secondAttribute="trailing" constant="20" id="FyR-aW-Q1W"/>
-                <constraint firstItem="IVQ-gN-uCe" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="GRk-wR-xQe"/>
+                <constraint firstItem="IVQ-gN-uCe" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="Glv-Mh-Ebl"/>
+                <constraint firstItem="QEc-D0-rkz" firstAttribute="top" secondItem="tNv-pQ-s73" secondAttribute="bottom" constant="10" id="Hkl-cK-TZq"/>
                 <constraint firstAttribute="bottom" secondItem="aGp-kM-jiL" secondAttribute="bottom" constant="20" id="I6Y-nN-SeB"/>
-                <constraint firstItem="QEc-D0-rkz" firstAttribute="top" secondItem="IVQ-gN-uCe" secondAttribute="bottom" constant="23" id="Ria-os-DnT"/>
+                <constraint firstItem="tNv-pQ-s73" firstAttribute="top" secondItem="IVQ-gN-uCe" secondAttribute="bottom" constant="8" id="KFK-S7-IfA"/>
+                <constraint firstItem="tNv-pQ-s73" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="Mnp-Hn-ur1"/>
+                <constraint firstItem="IVQ-gN-uCe" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="UMJ-YG-8PD"/>
                 <constraint firstItem="eut-j1-t4p" firstAttribute="top" secondItem="QEc-D0-rkz" secondAttribute="bottom" constant="26" id="V3S-NZ-8Kd"/>
                 <constraint firstAttribute="trailing" secondItem="QEc-D0-rkz" secondAttribute="trailing" constant="20" id="WbY-mj-4kj"/>
-                <constraint firstItem="IVQ-gN-uCe" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="ZB8-Vk-0mW"/>
                 <constraint firstItem="eut-j1-t4p" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="ZLu-77-Va6"/>
-                <constraint firstAttribute="trailing" secondItem="tNv-pQ-s73" secondAttribute="trailing" constant="20" id="Zf5-gQ-kun"/>
                 <constraint firstItem="QEc-D0-rkz" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="mYc-6X-E06"/>
                 <constraint firstItem="MlR-aQ-NFM" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="oOt-MK-mns"/>
                 <constraint firstAttribute="bottom" secondItem="PnX-0L-D3A" secondAttribute="bottom" constant="20" id="oWu-Me-eL5"/>
-                <constraint firstItem="IVQ-gN-uCe" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="qMZ-ll-039"/>
                 <constraint firstItem="PnX-0L-D3A" firstAttribute="bottom" secondItem="aGp-kM-jiL" secondAttribute="bottom" id="rJg-mp-1NX"/>
-                <constraint firstItem="tNv-pQ-s73" firstAttribute="leading" secondItem="IVQ-gN-uCe" secondAttribute="trailing" constant="15" id="wLg-tk-NOe"/>
             </constraints>
-            <point key="canvasLocation" x="33.5" y="137"/>
+            <point key="canvasLocation" x="33.5" y="136.5"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="Q0i-f1-VQ7"/>
     </objects>
