@@ -19,20 +19,26 @@ import Foundation
     @IBInspectable @objc public var appIcon:NSImage = NSApplication.sharedApplication().applicationIconImage
         { didSet { self.listSignupViewController?.appIcon = appIcon } }
     
-    @IBInspectable @objc public var signupTitle:String? = "Sign up to our newsletter"
-        { didSet { self.listSignupViewController?.signupTitle = signupTitle ?? "" } }
+    @IBInspectable @objc public var signupTitle:String?
+        { didSet {
+            self.listSignupViewController?.signupTitle = signupTitle
+        }
+    }
     
-    @IBInspectable @objc public var signupPrompt:String? = "Sign up"
-        { didSet { self.listSignupViewController?.signupPrompt = signupPrompt ?? "" } }
+    @IBInspectable @objc public var signupPrompt:String?
+        { didSet { self.listSignupViewController?.signupPrompt = signupPrompt } }
     
-    @IBInspectable @objc public var dismissPrompt:String? = "No, Thanks"
-        { didSet { self.listSignupViewController?.dismissPrompt = dismissPrompt ?? "" } }
+    @IBInspectable @objc public var dismissPrompt:String?
+        { didSet { self.listSignupViewController?.dismissPrompt = dismissPrompt } }
     
-    @IBInspectable @objc public var signupMessage:String? = "Sign up to receive news and updates on \(productName)!\n\nWe will email you with instructions to get started, and will update you on news and special deals."
-        { didSet { self.listSignupViewController?.signupMessage = signupMessage ?? "" } }
+    @IBInspectable @objc public var signupMessage:String?
+        { didSet { self.listSignupViewController?.signupMessage = signupMessage } }
     
-    @IBInspectable @objc public var signupThankYou:String? = "Thanks for signing up!"
-        { didSet { self.listSignupViewController?.signupThankYou = signupThankYou ?? "" } }
+    @IBInspectable @objc public var signupThankYou:String?
+        { didSet {
+            self.listSignupViewController?.signupThankYou = signupThankYou ?? ""
+        }
+    }
     
     private(set) public var listSignupViewController:MailingListSignupViewController?
     
@@ -49,16 +55,18 @@ import Foundation
         super.init(window:window)
     }
     
-    public override func loadWindow() {
-        self.loadWindow()
-    }
-    
     public override func awakeFromNib() {
         super.awakeFromNib()
         let signupVC = MailingListSignupViewController(nibName: nil, bundle: self.bundleForSignupNib)
         signupVC?.delegate = self
         self.listSignupViewController = signupVC
         self.contentViewController = signupVC
+        
+        self.signupTitle = "Sign up to our newsletter"
+        self.signupPrompt = "Sign up"
+        self.dismissPrompt = "No, Thanks"
+        self.signupMessage = "Sign up to receive news and updates on \(self.dynamicType.productName)!\n\nWe will email you with instructions to get started, and will update you on news and special deals."
+        self.signupThankYou = "Thanks for signing up!"
     }
     
     public override func windowDidLoad() {

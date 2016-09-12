@@ -9,8 +9,12 @@
             <connections>
                 <outlet property="dismissButton" destination="aGp-kM-jiL" id="4Vz-ZA-y9v"/>
                 <outlet property="emailAddressField" destination="eut-j1-t4p" id="pwL-nI-s58"/>
+                <outlet property="noThanksButton" destination="aGp-kM-jiL" id="FmA-VH-nOj"/>
                 <outlet property="signUpButton" destination="PnX-0L-D3A" id="fkX-k9-Cs4"/>
-                <outlet property="thankYouField" destination="MlR-aQ-NFM" id="L6F-Vc-oWC"/>
+                <outlet property="signupMessageField" destination="QEc-D0-rkz" id="A4l-3U-CIP"/>
+                <outlet property="signupPromptButton" destination="PnX-0L-D3A" id="DN1-7V-jfG"/>
+                <outlet property="signupTitleField" destination="tNv-pQ-s73" id="xsY-9O-jHj"/>
+                <outlet property="thankYouField" destination="MlR-aQ-NFM" id="own-mO-ozd"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -91,9 +95,6 @@ and will update you on news and special deals.</string>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
-                    <connections>
-                        <binding destination="-2" name="value" keyPath="self.signupTitle" id="E4H-9O-KZb"/>
-                    </connections>
                 </textField>
                 <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MlR-aQ-NFM">
                     <rect key="frame" x="18" y="82" width="315" height="17"/>

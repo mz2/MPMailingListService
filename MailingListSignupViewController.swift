@@ -20,11 +20,35 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
     // these strings just such as to avoid Nib loading time crashes with bad error messages
     // there are more meaningful defaults in the signup window controller class, also with IBInspectable properties.
     
-    @IBInspectable @objc public var signupTitle:String = "<Title>"
-    @IBInspectable @objc public var signupPrompt:String = "<Prompt>"
-    @IBInspectable @objc public var dismissPrompt:String = "Dismiss"
-    @IBInspectable @objc public var signupMessage:String = "Sign up"
-    @IBInspectable @objc public var signupThankYou:String = "<Thank you message>"
+    @IBInspectable @objc public var signupTitle:String?
+    @IBOutlet weak var signupTitleField: NSTextField! { didSet {
+            self.signupTitleField.stringValue = signupTitle ?? ""
+        }
+    }
+    
+    @IBInspectable @objc public var signupPrompt:String?
+    @IBOutlet weak var signupPromptButton: NSButton! { didSet {
+            self.signupPromptButton.title = signupPrompt ?? ""
+        }
+    }
+    
+    @IBInspectable @objc public var dismissPrompt:String? = "Dismiss"
+    @IBOutlet weak var noThanksButton: NSButton! { didSet {
+            self.noThanksButton.title = dismissPrompt ?? ""
+        }
+    }
+    
+    @IBInspectable @objc public var signupMessage:String? = "Sign up"
+    @IBOutlet weak var signupMessageField: NSTextField! { didSet {
+            self.signupMessageField.stringValue = signupMessage ?? ""
+        }
+    }
+    
+    @IBInspectable @objc public var signupThankYou:String? = "<Thank you message>" { didSet {
+            self.thankYouField.stringValue = signupThankYou ?? ""
+        }
+    }
+    @IBOutlet weak var thankYouField: NSTextField!
     
     private var mailingListService:MailingListService?
     
@@ -33,7 +57,6 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
     @IBOutlet weak var dismissButton: NSButton!
     @IBOutlet weak var signUpButton: NSButton!
     @IBOutlet weak var emailAddressField: NSTextField!
-    @IBOutlet weak var thankYouField: NSTextField!
     
     @IBOutlet weak var delegate:MailingListSignupViewControllerDelegate?
     
@@ -54,10 +77,9 @@ public class MailingListSignupViewController: NSViewController, MailingListServi
             dispatch_async(dispatch_get_main_queue()) {
                 self.emailAddressField.bordered = false
                 self.emailAddressField.drawsBackground = false
-                self.emailAddressField.stringValue = self.signupThankYou
                 self.emailAddressField.animator().hidden = true
                 
-                self.thankYouField.stringValue = self.signupThankYou
+                self.thankYouField.stringValue = self.signupThankYou ?? ""
                 self.thankYouField.animator().hidden = false
                 
                 self.dismissButton.hidden = true
