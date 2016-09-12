@@ -20,6 +20,12 @@
 		5F29EFF41D830C1D00F8373C /* ChimpKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */; };
 		5F29EFFA1D83116C00F8373C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29EFF91D83116C00F8373C /* String+Extensions.swift */; };
 		5F29EFFC1D843D2300F8373C /* MailingListSignupWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29EFFB1D843D2300F8373C /* MailingListSignupWindowController.swift */; };
+		5F5189941D86E5A600833874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5189931D86E5A600833874 /* AppDelegate.swift */; };
+		5F5189961D86E5A600833874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5189951D86E5A600833874 /* Assets.xcassets */; };
+		5F5189991D86E5A600833874 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5189971D86E5A600833874 /* MainMenu.xib */; };
+		5F51899E1D86E5B500833874 /* MPMailingListService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCD54101D82CD9D00E9A32C /* MPMailingListService.framework */; };
+		5F5189B51D86E6AB00833874 /* ChimpKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */; };
+		5F5189B71D86E6C700833874 /* ChimpKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FCD54151D82CD9D00E9A32C /* MPMailingListService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FCD54131D82CD9D00E9A32C /* MPMailingListService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FCD541D1D82CE8800E9A32C /* ChimpKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FCD541C1D82CE8800E9A32C /* ChimpKit.framework */; };
 		5FCD541F1D82CEDB00E9A32C /* MailingListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCD541E1D82CEDB00E9A32C /* MailingListService.swift */; };
@@ -27,6 +33,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		5F29EFEE1D830C0200F8373C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FCD54071D82CD9D00E9A32C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FCD540F1D82CD9D00E9A32C;
+			remoteInfo = MPMailingListService;
+		};
+		5F51899F1D86E5B900833874 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5FCD54071D82CD9D00E9A32C /* Project object */;
 			proxyType = 1;
@@ -47,6 +60,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5F5189B61D86E6BE00833874 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5F5189B71D86E6C700833874 /* ChimpKit.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +86,11 @@
 		5F29EFF91D83116C00F8373C /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		5F29EFFB1D843D2300F8373C /* MailingListSignupWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingListSignupWindowController.swift; sourceTree = "<group>"; };
 		5F29EFFD1D8445C000F8373C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5F5189911D86E5A600833874 /* Mailing List Nib Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mailing List Nib Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5189931D86E5A600833874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5F5189951D86E5A600833874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F5189981D86E5A600833874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5F51899A1D86E5A600833874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FCD54101D82CD9D00E9A32C /* MPMailingListService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPMailingListService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCD54131D82CD9D00E9A32C /* MPMailingListService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPMailingListService.h; sourceTree = "<group>"; };
 		5FCD54141D82CD9D00E9A32C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +105,15 @@
 			files = (
 				5F29EFF01D830C0500F8373C /* MPMailingListService.framework in Frameworks */,
 				5F29EFF41D830C1D00F8373C /* ChimpKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F51898E1D86E5A600833874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F51899E1D86E5B500833874 /* MPMailingListService.framework in Frameworks */,
+				5F5189B51D86E6AB00833874 /* ChimpKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,20 +140,32 @@
 			path = "Mailing List Example";
 			sourceTree = "<group>";
 		};
+		5F5189921D86E5A600833874 /* Mailing List Nib Example */ = {
+			isa = PBXGroup;
+			children = (
+				5F5189931D86E5A600833874 /* AppDelegate.swift */,
+				5F5189951D86E5A600833874 /* Assets.xcassets */,
+				5F5189971D86E5A600833874 /* MainMenu.xib */,
+				5F51899A1D86E5A600833874 /* Info.plist */,
+			);
+			path = "Mailing List Nib Example";
+			sourceTree = "<group>";
+		};
 		5FCD54061D82CD9D00E9A32C = {
 			isa = PBXGroup;
 			children = (
-				5FCD541B1D82CE8100E9A32C /* Frameworks */,
-				5F29EFE01D830B7B00F8373C /* Mailing List Example */,
+				5F29EFFD1D8445C000F8373C /* README.md */,
 				5FCD541E1D82CEDB00E9A32C /* MailingListService.swift */,
 				5F29EFD71D83073200F8373C /* MailingListSignupViewController.swift */,
-				5F29EFD81D83073200F8373C /* MailingListSignupViewController.xib */,
 				5F29EFFB1D843D2300F8373C /* MailingListSignupWindowController.swift */,
+				5F29EFF91D83116C00F8373C /* String+Extensions.swift */,
+				5F29EFD81D83073200F8373C /* MailingListSignupViewController.xib */,
 				5F22F1451D86DE34000EC829 /* MailingListSignupWindowController.xib */,
+				5FCD541B1D82CE8100E9A32C /* Frameworks */,
+				5F29EFE01D830B7B00F8373C /* Mailing List Example */,
+				5F5189921D86E5A600833874 /* Mailing List Nib Example */,
 				5FCD54121D82CD9D00E9A32C /* MPMailingListService */,
 				5FCD54111D82CD9D00E9A32C /* Products */,
-				5F29EFFD1D8445C000F8373C /* README.md */,
-				5F29EFF91D83116C00F8373C /* String+Extensions.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +174,7 @@
 			children = (
 				5FCD54101D82CD9D00E9A32C /* MPMailingListService.framework */,
 				5F29EFDF1D830B7B00F8373C /* Mailing List Example.app */,
+				5F5189911D86E5A600833874 /* Mailing List Nib Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,6 +229,25 @@
 			productReference = 5F29EFDF1D830B7B00F8373C /* Mailing List Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5F5189901D86E5A600833874 /* Mailing List Nib Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F51899D1D86E5A600833874 /* Build configuration list for PBXNativeTarget "Mailing List Nib Example" */;
+			buildPhases = (
+				5F51898D1D86E5A600833874 /* Sources */,
+				5F51898E1D86E5A600833874 /* Frameworks */,
+				5F51898F1D86E5A600833874 /* Resources */,
+				5F5189B61D86E6BE00833874 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F5189A01D86E5B900833874 /* PBXTargetDependency */,
+			);
+			name = "Mailing List Nib Example";
+			productName = "Mailing List Nib Example";
+			productReference = 5F5189911D86E5A600833874 /* Mailing List Nib Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 		5FCD540F1D82CD9D00E9A32C /* MPMailingListService */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FCD54181D82CD9D00E9A32C /* Build configuration list for PBXNativeTarget "MPMailingListService" */;
@@ -211,6 +281,11 @@
 						DevelopmentTeam = SJK358RN87;
 						ProvisioningStyle = Automatic;
 					};
+					5F5189901D86E5A600833874 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = SJK358RN87;
+						ProvisioningStyle = Automatic;
+					};
 					5FCD540F1D82CD9D00E9A32C = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = SJK358RN87;
@@ -234,6 +309,7 @@
 			targets = (
 				5FCD540F1D82CD9D00E9A32C /* MPMailingListService */,
 				5F29EFDE1D830B7B00F8373C /* Mailing List Example */,
+				5F5189901D86E5A600833874 /* Mailing List Nib Example */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +321,15 @@
 			files = (
 				5F29EFE61D830B7B00F8373C /* Assets.xcassets in Resources */,
 				5F29EFE91D830B7B00F8373C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F51898F1D86E5A600833874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5189961D86E5A600833874 /* Assets.xcassets in Resources */,
+				5F5189991D86E5A600833874 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +354,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5F51898D1D86E5A600833874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5189941D86E5A600833874 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FCD540B1D82CD9D00E9A32C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -288,6 +381,11 @@
 			target = 5FCD540F1D82CD9D00E9A32C /* MPMailingListService */;
 			targetProxy = 5F29EFEE1D830C0200F8373C /* PBXContainerItemProxy */;
 		};
+		5F5189A01D86E5B900833874 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FCD540F1D82CD9D00E9A32C /* MPMailingListService */;
+			targetProxy = 5F51899F1D86E5B900833874 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -297,6 +395,14 @@
 				5F29EFE81D830B7B00F8373C /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5F5189971D86E5A600833874 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F5189981D86E5A600833874 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -337,6 +443,45 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.manuscripts.Mailing-List-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+		5F51899B1D86E5A600833874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SJK358RN87;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "Mailing List Nib Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.piipari.Mailing-List-Nib-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		5F51899C1D86E5A600833874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SJK358RN87;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "Mailing List Nib Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.piipari.Mailing-List-Nib-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.3;
@@ -500,6 +645,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5F51899D1D86E5A600833874 /* Build configuration list for PBXNativeTarget "Mailing List Nib Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F51899B1D86E5A600833874 /* Debug */,
+				5F51899C1D86E5A600833874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		5FCD540A1D82CD9D00E9A32C /* Build configuration list for PBXProject "MPMailingListService" */ = {
 			isa = XCConfigurationList;
