@@ -34,7 +34,7 @@ import Foundation
     @IBInspectable @objc public var signupThankYou:String? = "Thanks for signing up!"
         { didSet { self.listSignupViewController?.signupThankYou = signupThankYou ?? "" } }
     
-    private var listSignupViewController:MailingListSignupViewController?
+    private(set) public var listSignupViewController:MailingListSignupViewController?
     
     @objc public class var productName: String {
         return NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String
