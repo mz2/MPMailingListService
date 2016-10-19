@@ -13,7 +13,7 @@ import Cocoa
 }
 
 @IBDesignable
-public class MailingListSignupViewController: NSViewController, MailingListServiceDataSource {
+@objc(MailingListSignupViewController) public class MailingListSignupViewController: NSViewController, MailingListServiceDataSource {
 
     @IBInspectable @objc public var icon:NSImage? { didSet {
         self.signupTitleImageView?.image = icon ?? NSApplication.sharedApplication().applicationIconImage
