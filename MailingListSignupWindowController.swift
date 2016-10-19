@@ -14,7 +14,7 @@ import Foundation
 
 @IBDesignable @objc public class MailingListSignupWindowController: NSWindowController, NSWindowDelegate {
     
-    @IBOutlet weak var delegate:MailingListSignupWindowControllerDelegate?
+    @IBOutlet weak public var delegate:MailingListSignupWindowControllerDelegate?
     
     @IBInspectable public var APIKey:String?
         { didSet { self.listSignupViewController?.APIKey = APIKey } }
@@ -90,6 +90,7 @@ import Foundation
 
 extension MailingListSignupWindowController: MailingListSignupViewControllerDelegate {
     public func shouldDismissSignupViewController(signupViewController: MailingListSignupViewController) {
+        self.delegate?.didDismiss(mailingListSignupWindowController: self)
         self.window?.close()
     }
 }

@@ -61,7 +61,7 @@ import Cocoa
     @IBOutlet public weak var signUpButton: NSButton!
     @IBOutlet public weak var emailAddressField: NSTextField!
     
-    @IBOutlet weak var delegate:MailingListSignupViewControllerDelegate?
+    @IBOutlet weak public var delegate:MailingListSignupViewControllerDelegate?
     
     public var APIKey:String?
     public var listID:String?
