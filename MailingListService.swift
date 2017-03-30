@@ -18,7 +18,7 @@ public protocol MailingListServiceDataSource {
     func listIdentifier(mailingListService service: MailingListService, listType:MailingListType) -> String
 }
 
-public typealias MailingListServiceSignupCompletionBlock = (error:ErrorType?) -> Void
+public typealias MailingListServiceSignupCompletionBlock = (Swift.Error?) -> Void
 
 public struct MailingListService {
     
@@ -28,43 +28,35 @@ public struct MailingListService {
         self.dataSource = dataSource
     }
     
-    public enum Error:ErrorType {
-        case UnexpectedResponse
-        case AlreadySignedUp
-        case EmptyResponse
-        case ResponseDataNotJSON(NSData?)
-        case ErrorCodeNotNumber([String:AnyObject])
-        
-        public enum Code:Int {
-            case AlreadySignedUp = 1
-            case EmptyResponse = 2
-            case ErrorCodeNotNumber = 3
-            case ResponseDataNotJSON = 5
-            case UnexpectedResponse = 6
-        }
+    public enum Error:Swift.Error {
+        case unexpectedResponse
+        case alreadySignedUp
+        case emptyResponse
+        case responseDataNotJSON(NSData?)
+        case errorCodeNotNumber([String:AnyObject])
         
         public var code:Code {
             switch self {
-            case .AlreadySignedUp: return .AlreadySignedUp
-            case .EmptyResponse: return .EmptyResponse
-            case .ErrorCodeNotNumber(_): return .ErrorCodeNotNumber
-            case .ResponseDataNotJSON(_): return .ResponseDataNotJSON
-            case .UnexpectedResponse: return .UnexpectedResponse
+            case .alreadySignedUp: return 1
+            case .emptyResponse: return 2
+            case .errorCodeNotNumber(_): return 3
+            case .responseDataNotJSON(_): return 5
+            case .unexpectedResponse: return 6
             }
         }
         
         public var presentableDescription: String {
             switch self {
             
-            case .AlreadySignedUp:
+            case .alreadySignedUp:
                 return "Email address is already signed up."
             
-            case .EmptyResponse:
+            case .emptyResponse:
                 return "Empty response from server. Please contact customer support if this persists."
             
-            case .UnexpectedResponse,
-                 .ResponseDataNotJSON(_),
-                 .ErrorCodeNotNumber(_):
+            case .unexpectedResponse,
+                 .responseDataNotJSON(_),
+                 .errorCodeNotNumber(_):
                 return "Unexpected response from server. Please contact customer support if this persists."
             }
         }
@@ -72,15 +64,15 @@ public struct MailingListService {
         public var presentableRecoverySuggestion: String {
             switch self {
                 
-            case .AlreadySignedUp:
+            case .alreadySignedUp:
                 return "Email address looks to be already signed up.\nPlease contact support if you believe this is an error."
                 
-            case .EmptyResponse:
+            case .emptyResponse:
                 return "Empty response from server.\nPlease contact support if this persists."
                 
-            case .UnexpectedResponse,
-                 .ResponseDataNotJSON(_),
-                 .ErrorCodeNotNumber(_):
+            case .unexpectedResponse,
+                 .responseDataNotJSON(_),
+                 .errorCodeNotNumber(_):
                 return "Unexpected response from server.\nPlease contact support if this persists."
             }
         }
@@ -104,13 +96,12 @@ public struct MailingListService {
             preconditionFailure("Missing data source")
         }
         
-        
-        let params:[NSObject:AnyObject] = ["id": listID, "email": ["email":address]]
+        let params:[String:Any] = ["id": listID, "email": ["email":address]]
         
         self.chimpKit.apiKey = self.dataSource?.APIKey(mailingListService: self)
         self.chimpKit.callApiMethod("lists/subscribe", withParams: params) { response, data, error in
             if let error = error {
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     completionHandler(error:error)
                 }
                 return
@@ -128,7 +119,7 @@ public struct MailingListService {
             
             do {
                 guard let respData = data,
-                      let dict = try NSJSONSerialization.JSONObjectWithData(respData,
+                      let dict = try JSONSerialization.JSONObjectWithData(respData,
                                                                             options: []) as? [String:AnyObject]
                     else {
                         completionHandler(error:Error.EmptyResponse.presentableRepresentation)

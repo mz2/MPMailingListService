@@ -23,7 +23,7 @@ import Foundation
         { didSet { self.listSignupViewController?.listID = listID } }
     
     @IBInspectable @objc public var icon:NSImage?
-        { didSet { self.listSignupViewController?.icon = icon ?? NSApplication.sharedApplication().applicationIconImage } }
+        { didSet { self.listSignupViewController?.icon = icon ?? NSApplication.shared.applicationIconImage } }
     
     @IBInspectable @objc public var signupTitle:String?
         { didSet { self.listSignupViewController?.signupTitle = signupTitle } }
@@ -46,7 +46,7 @@ import Foundation
     private(set) public var listSignupViewController:MailingListSignupViewController?
     
     @objc public class var productName: String {
-        return NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String
+        return Bundle.main.infoDictionary?["CFBundleName"] as? String
             ?? "<Your app whose bundle lacks Info.plist key 'CFBundleName'>"
     }
     
@@ -68,7 +68,7 @@ import Foundation
         self.signupTitle = "Sign up to our newsletter"
         self.signupPrompt = "Sign up"
         self.dismissPrompt = "No, Thanks"
-        self.signupMessage = "Sign up to receive news and updates on \(self.dynamicType.productName)!\n\nWe will email you with instructions to get started, and will update you on news and special deals."
+        self.signupMessage = "Sign up to receive news and updates on \(type(of: self).productName)!\n\nWe will email you with instructions to get started, and will update you on news and special deals."
         self.signupThankYou = "Thanks for signing up!"
     }
     
@@ -83,8 +83,8 @@ import Foundation
     
     // override in subclass if you want to use a custom MailingListSignupViewController subclass…
     // but for instance the original Nib
-    var bundleForSignupNib: NSBundle {
-        return NSBundle(forClass: self.signupViewControllerClass)
+    var bundleForSignupNib: Bundle {
+        return Bundle(forClass: self.signupViewControllerClass)
     }
 }
 
