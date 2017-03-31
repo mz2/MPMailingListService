@@ -9,83 +9,83 @@
 import Cocoa
 
 @objc public protocol MailingListSignupViewControllerDelegate {
-    func shouldDismissSignupViewController(signupViewController:MailingListSignupViewController)
+    func shouldDismissSignupViewController(_ signupViewController:MailingListSignupViewController)
 }
 
 @IBDesignable
-@objc(MailingListSignupViewController) public class MailingListSignupViewController: NSViewController, MailingListServiceDataSource {
+@objc(MailingListSignupViewController) open class MailingListSignupViewController: NSViewController, MailingListServiceDataSource {
 
-    @IBInspectable @objc public var icon:NSImage? { didSet {
-        self.signupTitleImageView?.image = icon ?? NSApplication.sharedApplication().applicationIconImage
+    @IBInspectable @objc open var icon:NSImage? { didSet {
+        self.signupTitleImageView?.image = icon ?? NSApplication.shared().applicationIconImage
         }
     }
-    @IBOutlet public weak var signupTitleImageView:NSImageView?
+    @IBOutlet open weak var signupTitleImageView:NSImageView?
     
     // these strings just such as to avoid Nib loading time crashes with bad error messages
     // there are more meaningful defaults in the signup window controller class, also with IBInspectable properties.
     
-    @IBInspectable @objc public var signupTitle:String? { didSet {
+    @IBInspectable @objc open var signupTitle:String? { didSet {
         self.signupTitleField.stringValue = signupTitle ?? ""
         }
     }
     @IBOutlet weak var signupTitleField: NSTextField!
     
-    @IBInspectable @objc public var signupPrompt:String? { didSet {
+    @IBInspectable @objc open var signupPrompt:String? { didSet {
         self.signUpButton.title = signupPrompt ?? ""
         }
     }
     
-    @IBInspectable @objc public var dismissPrompt:String? { didSet {
+    @IBInspectable @objc open var dismissPrompt:String? { didSet {
         self.noThanksButton.title = dismissPrompt ?? ""
         }
     }
     @IBOutlet weak var noThanksButton: NSButton!
     
-    @IBInspectable @objc public var signupMessage:String? { didSet {
+    @IBInspectable @objc open var signupMessage:String? { didSet {
         self.signupMessageField.stringValue = signupMessage ?? ""
         }
     }
     @IBOutlet weak var signupMessageField: NSTextField!
     
-    @IBInspectable @objc public var signupThankYou:String? { didSet {
+    @IBInspectable @objc open var signupThankYou:String? { didSet {
             self.thankYouField.stringValue = signupThankYou ?? ""
         }
     }
     @IBOutlet weak var thankYouField: NSTextField!
     
-    private var mailingListService:MailingListService?
+    fileprivate var mailingListService:MailingListService?
     
-    public var listType:MailingListType = .Newsletter
+    open var listType:MailingListType = .newsletter
     
-    @IBOutlet public weak var dismissButton: NSButton!
-    @IBOutlet public weak var signUpButton: NSButton!
-    @IBOutlet public weak var emailAddressField: NSTextField!
+    @IBOutlet open weak var dismissButton: NSButton!
+    @IBOutlet open weak var signUpButton: NSButton!
+    @IBOutlet open weak var emailAddressField: NSTextField!
     
-    @IBOutlet weak public var delegate:MailingListSignupViewControllerDelegate?
+    @IBOutlet weak open var delegate:MailingListSignupViewControllerDelegate?
     
-    public var APIKey:String?
-    public var listID:String?
+    open var APIKey:String?
+    open var listID:String?
     
-    @objc(signUp:) @IBAction func signUp(sender:AnyObject?) {
+    @objc(signUp:) @IBAction func signUp(_ sender:AnyObject?) {
         self.mailingListService?.signUp(emailAddress: self.emailAddressField.stringValue,
                                         listType: self.listType)
         { error in
-            if let error = error as? NSError {
-                dispatch_async(dispatch_get_main_queue()) {
+            if let error = error {
+                DispatchQueue.main.async {
                     self.presentError(error)
                 }
                 return
             }
             
-            dispatch_async(dispatch_get_main_queue()) {
-                self.emailAddressField.bordered = false
+            DispatchQueue.main.async {
+                self.emailAddressField.isBordered = false
                 self.emailAddressField.drawsBackground = false
-                self.emailAddressField.animator().hidden = true
+                self.emailAddressField.animator().isHidden = true
                 
                 self.thankYouField.stringValue = self.signupThankYou ?? ""
-                self.thankYouField.animator().hidden = false
+                self.thankYouField.animator().isHidden = false
                 
-                self.dismissButton.hidden = true
+                self.dismissButton.isHidden = true
                 
                 self.signUpButton.title = "Close"
                 self.signUpButton.action = #selector(MailingListSignupViewController.dismiss(_:))
@@ -93,24 +93,24 @@ import Cocoa
         }
     }
     
-    @objc(dismiss:) @IBAction func dismiss(sender:AnyObject?) {
+    @objc(dismiss:) @IBAction func dismiss(_ sender:AnyObject?) {
         self.delegate?.shouldDismissSignupViewController(self)
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         self.mailingListService = MailingListService(dataSource:self)
         self.emailAddressField.becomeFirstResponder()
     }
     
-    @objc public var emailAddressIsValid:Bool {
+    @objc open var emailAddressIsValid:Bool {
         return self.emailAddressField.stringValue.isValidEmailAddress
     }
     
     // MARK: MailingListServiceDataSource
     
-    public func APIKey(mailingListService service: MailingListService) -> String {
+    open func APIKey(mailingListService service: MailingListService) -> String {
         guard let apiKey = self.APIKey else {
             preconditionFailure("self.APIKey is required")
         }
@@ -118,7 +118,7 @@ import Cocoa
         return apiKey
     }
     
-    public func listIdentifier(mailingListService service: MailingListService,
+    open func listIdentifier(mailingListService service: MailingListService,
                                                   listType: MailingListType) -> String {
         guard let listIdentifier = self.listID else {
             preconditionFailure("self.listID is required")
@@ -132,7 +132,7 @@ import Cocoa
 
 extension MailingListSignupViewController: NSTextFieldDelegate {
     
-    public override func controlTextDidChange(obj: NSNotification) {
-        self.signUpButton.enabled = self.emailAddressIsValid
+    open override func controlTextDidChange(_ obj: Notification) {
+        self.signUpButton.isEnabled = self.emailAddressIsValid
     }
 }

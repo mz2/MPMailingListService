@@ -12,40 +12,40 @@ import Foundation
     @objc (didDismissMailingListSignupWindowController:) func didDismiss(mailingListSignupWindowController controller:MailingListSignupWindowController)
 }
 
-@IBDesignable @objc public class MailingListSignupWindowController: NSWindowController, NSWindowDelegate {
+@IBDesignable @objc open class MailingListSignupWindowController: NSWindowController, NSWindowDelegate {
     
-    @IBOutlet weak public var delegate:MailingListSignupWindowControllerDelegate?
+    @IBOutlet weak open var delegate:MailingListSignupWindowControllerDelegate?
     
-    @IBInspectable public var APIKey:String?
+    @IBInspectable open var APIKey:String?
         { didSet { self.listSignupViewController?.APIKey = APIKey } }
     
-    @IBInspectable public var listID:String?
+    @IBInspectable open var listID:String?
         { didSet { self.listSignupViewController?.listID = listID } }
     
-    @IBInspectable @objc public var icon:NSImage?
-        { didSet { self.listSignupViewController?.icon = icon ?? NSApplication.shared.applicationIconImage } }
+    @IBInspectable @objc open var icon:NSImage?
+        { didSet { self.listSignupViewController?.icon = icon ?? NSApplication.shared().applicationIconImage } }
     
-    @IBInspectable @objc public var signupTitle:String?
+    @IBInspectable @objc open var signupTitle:String?
         { didSet { self.listSignupViewController?.signupTitle = signupTitle } }
     
-    @IBInspectable @objc public var signupPrompt:String?
+    @IBInspectable @objc open var signupPrompt:String?
         { didSet { self.listSignupViewController?.signupPrompt = signupPrompt } }
     
-    @IBInspectable @objc public var dismissPrompt:String?
+    @IBInspectable @objc open var dismissPrompt:String?
         { didSet { self.listSignupViewController?.dismissPrompt = dismissPrompt } }
     
-    @IBInspectable @objc public var signupMessage:String?
+    @IBInspectable @objc open var signupMessage:String?
         { didSet { self.listSignupViewController?.signupMessage = signupMessage } }
     
-    @IBInspectable @objc public var signupThankYou:String?
+    @IBInspectable @objc open var signupThankYou:String?
         { didSet {
             self.listSignupViewController?.signupThankYou = signupThankYou ?? ""
         }
     }
     
-    private(set) public var listSignupViewController:MailingListSignupViewController?
+    fileprivate(set) open var listSignupViewController:MailingListSignupViewController?
     
-    @objc public class var productName: String {
+    @objc open class var productName: String {
         return Bundle.main.infoDictionary?["CFBundleName"] as? String
             ?? "<Your app whose bundle lacks Info.plist key 'CFBundleName'>"
     }
@@ -58,7 +58,7 @@ import Foundation
         super.init(window:window)
     }
     
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         let signupVC = MailingListSignupViewController(nibName: nil, bundle: self.bundleForSignupNib)
         signupVC?.delegate = self
@@ -72,7 +72,7 @@ import Foundation
         self.signupThankYou = "Thanks for signing up!"
     }
     
-    public override func windowDidLoad() {
+    open override func windowDidLoad() {
         super.windowDidLoad()
     }
     
@@ -84,12 +84,12 @@ import Foundation
     // override in subclass if you want to use a custom MailingListSignupViewController subclass…
     // but for instance the original Nib
     var bundleForSignupNib: Bundle {
-        return Bundle(forClass: self.signupViewControllerClass)
+        return Bundle(for: self.signupViewControllerClass)
     }
 }
 
 extension MailingListSignupWindowController: MailingListSignupViewControllerDelegate {
-    public func shouldDismissSignupViewController(signupViewController: MailingListSignupViewController) {
+    public func shouldDismissSignupViewController(_ signupViewController: MailingListSignupViewController) {
         self.delegate?.didDismiss(mailingListSignupWindowController: self)
         self.window?.close()
     }

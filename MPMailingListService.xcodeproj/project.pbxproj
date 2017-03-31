@@ -289,7 +289,7 @@
 					5FCD540F1D82CD9D00E9A32C = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = SJK358RN87;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -605,7 +605,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -632,7 +632,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.manuscripts.MPMailingListService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -16,6 +16,6 @@ public extension String {
     static let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegex)
     
     var isValidEmailAddress:Bool {
-        return self.dynamicType.emailTest.evaluateWithObject(self)
+        return type(of: self).emailTest.evaluate(with: self)
     }
 }

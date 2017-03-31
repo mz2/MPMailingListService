@@ -10,7 +10,7 @@ import Foundation
 import ChimpKit
 
 public enum MailingListType:UInt {
-    case Newsletter = 1 // TODO: model this as a freeform value if requested.
+    case newsletter = 1 // TODO: model this as a freeform value if requested.
 }
 
 public protocol MailingListServiceDataSource {
@@ -32,10 +32,10 @@ public struct MailingListService {
         case unexpectedResponse
         case alreadySignedUp
         case emptyResponse
-        case responseDataNotJSON(NSData?)
+        case responseDataNotJSON(Data?)
         case errorCodeNotNumber([String:AnyObject])
         
-        public var code:Code {
+        public var code:Int {
             switch self {
             case .alreadySignedUp: return 1
             case .emptyResponse: return 2
@@ -79,18 +79,18 @@ public struct MailingListService {
         
         public var presentableRepresentation:NSError {
             return NSError(domain: ErrorDomain,
-                           code: self.code.rawValue,
+                           code: self.code,
                            userInfo: [ NSLocalizedDescriptionKey: self.presentableDescription,
                             NSLocalizedRecoverySuggestionErrorKey: self.presentableRecoverySuggestion ])
         }
     }
     
-    private(set) public var dataSource:MailingListServiceDataSource?
-    private let chimpKit = ChimpKit()
+    fileprivate(set) public var dataSource:MailingListServiceDataSource?
+    fileprivate let chimpKit = ChimpKit()
         
     public func signUp(emailAddress address:String,
                                     listType:MailingListType,
-                                    completionHandler: MailingListServiceSignupCompletionBlock) {
+                                    completionHandler: @escaping MailingListServiceSignupCompletionBlock) {
         
         guard let listID = self.dataSource?.listIdentifier(mailingListService: self, listType: listType) else {
             preconditionFailure("Missing data source")
@@ -102,41 +102,40 @@ public struct MailingListService {
         self.chimpKit.callApiMethod("lists/subscribe", withParams: params) { response, data, error in
             if let error = error {
                 DispatchQueue.main.async {
-                    completionHandler(error:error)
+                    completionHandler(error)
                 }
                 return
             }
             
-            guard let HTTPResponse = response as? NSHTTPURLResponse else {
-                preconditionFailure("Response ought to be a HTTP response: \(response)")
+            guard let HTTPResponse = response as? HTTPURLResponse else {
+                preconditionFailure("Response ought to be a HTTP response: \(String(describing: response))")
             }
             
             let statusCode = HTTPResponse.statusCode
             if (200...299).contains(statusCode) {
-                completionHandler(error:nil)
+                completionHandler(nil)
                 return
             }
             
             do {
                 guard let respData = data,
-                      let dict = try JSONSerialization.JSONObjectWithData(respData,
-                                                                            options: []) as? [String:AnyObject]
+                      let dict = try JSONSerialization.jsonObject(with: respData, options: []) as? [String:AnyObject]
                     else {
-                        completionHandler(error:Error.EmptyResponse.presentableRepresentation)
+                        completionHandler(Error.emptyResponse.presentableRepresentation)
                         return
                 }
                 
                 guard let codeNum = dict["code"] as? NSNumber else {
-                    completionHandler(error:Error.ErrorCodeNotNumber(dict).presentableRepresentation)
+                    completionHandler(Error.errorCodeNotNumber(dict).presentableRepresentation)
                     return
                 }
                 
-                if codeNum.integerValue == 214 {
-                    completionHandler(error: Error.AlreadySignedUp.presentableRepresentation)
+                if codeNum.intValue == 214 {
+                    completionHandler(Error.alreadySignedUp.presentableRepresentation)
                 }
             }
             catch {
-                completionHandler(error:Error.ResponseDataNotJSON(data).presentableRepresentation)
+                completionHandler(Error.responseDataNotJSON(data).presentableRepresentation)
             }
         }
     }
