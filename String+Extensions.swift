@@ -15,7 +15,7 @@ public extension String {
     static let emailRegex = ".+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*"
     static let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegex)
     
-    var isValidEmailAddress:Bool {
+    public var isValidEmailAddress:Bool {
         return type(of: self).emailTest.evaluate(with: self)
     }
 }
