@@ -63,8 +63,8 @@ import Cocoa
     
     @IBOutlet weak open var delegate:MailingListSignupViewControllerDelegate?
     
-    open var APIKey:String?
-    open var listID:String?
+    @objc open var APIKey:String?
+    @objc open var listID:String?
     
     @objc(signUp:) @IBAction func signUp(_ sender:AnyObject?) {
         self.mailingListService?.signUp(emailAddress: self.emailAddressField.stringValue,
