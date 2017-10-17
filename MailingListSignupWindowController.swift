@@ -43,7 +43,7 @@ import Foundation
         }
     }
     
-    fileprivate(set) open var listSignupViewController:MailingListSignupViewController?
+    fileprivate(set) @objc open var listSignupViewController:MailingListSignupViewController?
     
     @objc open class var productName: String {
         return Bundle.main.infoDictionary?["CFBundleName"] as? String
