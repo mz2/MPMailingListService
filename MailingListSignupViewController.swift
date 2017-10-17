@@ -16,7 +16,7 @@ import Cocoa
 @objc(MailingListSignupViewController) open class MailingListSignupViewController: NSViewController, MailingListServiceDataSource {
 
     @IBInspectable @objc open var icon:NSImage? { didSet {
-        self.signupTitleImageView?.image = icon ?? NSApplication.shared().applicationIconImage
+        self.signupTitleImageView?.image = icon ?? NSApplication.shared.applicationIconImage
         }
     }
     @IBOutlet open weak var signupTitleImageView:NSImageView?

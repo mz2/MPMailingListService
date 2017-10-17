@@ -23,7 +23,7 @@ import Foundation
         { didSet { self.listSignupViewController?.listID = listID } }
     
     @IBInspectable @objc open var icon:NSImage?
-        { didSet { self.listSignupViewController?.icon = icon ?? NSApplication.shared().applicationIconImage } }
+        { didSet { self.listSignupViewController?.icon = icon ?? NSApplication.shared.applicationIconImage } }
     
     @IBInspectable @objc open var signupTitle:String?
         { didSet { self.listSignupViewController?.signupTitle = signupTitle } }
@@ -61,7 +61,7 @@ import Foundation
     open override func awakeFromNib() {
         super.awakeFromNib()
         let signupVC = MailingListSignupViewController(nibName: nil, bundle: self.bundleForSignupNib)
-        signupVC?.delegate = self
+        signupVC.delegate = self
         self.listSignupViewController = signupVC
         self.contentViewController = signupVC
         
